@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "mmlops"
+version = "0.1.0"
+description = "Project for MLOps course"
+authors = ["otvc <olegerko048@gmail.com>"]
+license = "Apache License 2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+pandas = "^2.1.1"
+torch = "1.13.0"
+numpy = "^1.26.0"
+torchvision = "0.14.0"
+pre-commit = "^3.4.0"
+black = "^23.9.1"
+flake8 = "^6.1.0"
+isort = "^5.12.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 79
+target-version = ['py310']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "hug"
+py_version=310
+
+[tool.flake8]
+max-line-length = 79
