@@ -40,7 +40,7 @@ def run_inference(config: DictConfig) -> NoReturn:
     model.load_state_dict(checkpoint)
     model = Net().to(device)
 
-    predicts = test(model, device, test_loader)
+    predicts, _, _ = test(model, device, test_loader)
     df = pd.DataFrame({"Labels": predicts.T[0]})
     df.to_csv(config['path_result'])
     
