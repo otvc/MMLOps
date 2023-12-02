@@ -1,0 +1,22 @@
+no_cuda: False
+no_mps: False
+dry_run: False
+seed: 1
+
+hyperparams:
+    batch_size: 128
+    test_batch_size: 1000
+    epochs: 1
+    lr: 1.0
+    gamma: 0.7
+
+dataset:
+    path_train_split: '../../data/processed/train_split.csv'
+    path_test_split: '../../data/processed/test_split.csv'
+
+tracking:
+    log_interval: 10
+
+model:
+    save: True
+    path: 'mnist_cnn.pt' 

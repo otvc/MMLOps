@@ -1,0 +1,5 @@
+batch_size: 32
+no_cuda: False
+path_model: "mnist_cnn.pt"
+path_result: "predicts.csv"
+seed: 42
