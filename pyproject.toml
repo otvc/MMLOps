@@ -36,12 +36,12 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.black]
 line-length = 79
-target-version = ['py310']
+target-version = ['py311']
 include = '\.pyi?$'
 
 [tool.isort]
 profile = "hug"
-py_version=310
+py_version=311
 
 [tool.flake8]
 max-line-length = 79
