@@ -5,6 +5,7 @@ seed: 1
 
 logging:
     mlflow_params:
+        tracking_uri: 'http://127.0.0.1:5000'
         name: 'MNIST_EXP'
 
 hyperparams:
@@ -15,12 +16,12 @@ hyperparams:
     gamma: 0.7
 
 dataset:
-    path_train_split: '../../data/processed/test_split.csv'
-    path_test_split: '../../data/processed/test_split.csv'
+    path_train_split: 'data/processed/test_split.csv'
+    path_test_split: 'data/processed/test_split.csv'
 
 tracking:
     log_interval: 10
 
 model:
     save: True
-    path: 'mnist_cnn.pt' 
+    path: 'mnist_cnn.pt'

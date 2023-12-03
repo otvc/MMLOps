@@ -6,7 +6,6 @@ import torch.nn.functional as F
 
 
 class Net(nn.Module):
-
     def __init__(self) -> NoReturn:
         super(Net, self).__init__()
         self.conv1 = nn.Conv2d(1, 32, 3, 1)
@@ -15,7 +14,6 @@ class Net(nn.Module):
         self.dropout2 = nn.Dropout(0.5)
         self.fc1 = nn.Linear(9216, 128)
         self.fc2 = nn.Linear(128, 10)
-
 
     def forward(self, image):
         x = self.conv1(image)
