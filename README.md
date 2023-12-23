@@ -30,6 +30,8 @@ docker-compose up
 python test_client.py
 ```
 
+Репорт по подбору параметров смотреть [здесь](reports/Optimization.md)
+
 # Depricated
 
 В tools/triton_server располагается python_backend для инференса модели.
