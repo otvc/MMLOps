@@ -1,10 +1,28 @@
 Repository for **MLOps** course in **MIPT**
 ## Structure
-- **train.py** - script for training cnn model for MNIST
-- **infer.py** - script for inference on test set of MNIST
+- **train.py** - скрипт для тренировки модели на датасете MNIST
+- **infer.py** - скрипт для инференса модели на датасете MNIST
+- **test_client.py** - скрипт для теста клиента модели крутящейся на triton inference server;
+- **pytorch_to_onnx.py** - скрипт для преобразования сериализованной pytorch модели в onnx формат.
 
-Инференс модели выполняется при помощи тритон сервера.
-Алгоритм:
-1. Для того, чтобы поднять инференс, переместите файл с сохраненной после тренировки моделью в `tools/triton_server` с названием `mnist_cnn.pt`.
-2. Далее перейдите в папку `tools/triton_server`;
-3. Запустите скрипт `deploy.sh`
+Инференс модели выполняется при помощи тритон сервера с использованием onnx бэкенда.
+Для преобразования сериализованной PyTorch модели в onnx формат необходимо запустить скрипт pytorch_to_onnx.py. По дефолту предполагается, что данный скрипт запускается со следующими параметрами:
+```sh
+python3 pytorch_to_onnx.py --path_model='mnist_cnn.pt' --path_onnx='nvidia-triton/model_repository/mnist_cnn/1/model.onnx'
+```
+
+Для запуска triton server бекенда необходимо перейти в директорию nvidia-triton и выполнить следующую команду:
+```sh
+docker-compose up
+```
+
+Для того, чтобы запустить тест, необходимо выполнить следующую команду:
+
+```sh
+python test_client.py
+```
+
+# Depricated
+
+В tools/triton_server располагается python_backend для инференса модели.
+На данный момент изменен на onnx бэкенд.
